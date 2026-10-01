@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Merci Chef.Co - Özel şef kiralama ve kişiye özel gastronomi organizasyonları.">
+  <title>Merci Chef.Co | Private Chef & Gastronomy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar" id="navbar">
+  <a class="logo" href="#home">MERCI <span>CHEF.CO</span></a>
+  <nav>
+    <a href="#home" data-i18n="navHome">ANA SAYFA</a>
+    <a href="#about" data-i18n="navAbout">HAKKIMIZDA</a>
+    <a href="#chefs" data-i18n="navChefs">ŞEFLER</a>
+    <a href="#booking" data-i18n="navBooking">ORGANİZASYON</a>
+    <a href="#contact" data-i18n="navContact">İLETİŞİM</a>
+  </nav>
+  <div class="nav-right">
+    <div class="langs">
+      <button data-lang="tr" class="active">TR</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="fr">FR</button>
+      <button data-lang="ar">AR</button>
+    </div>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="eyebrow" data-i18n="heroEyebrow">PRIVATE CHEF EXPERIENCE</p>
+    <h1 data-i18n="heroTitle">Şefinizi Seçin.<br><span>Deneyiminizi Tasarlayın.</span></h1>
+    <p data-i18n="heroText">Özel günleriniz için seçkin şefler, kişiye özel menüler ve kusursuz gastronomi organizasyonları.</p>
+    <a class="gold-btn" href="#booking" data-i18n="heroBtn">ORGANİZASYONUNU OLUŞTUR</a>
+  </div>
+</section>
+
+<section class="about section" id="about">
+  <div>
+    <p class="eyebrow gold" data-i18n="aboutEyebrow">MERCI CHEF.CO</p>
+    <h2 data-i18n="aboutTitle">Evinizde, villanızda veya özel davetinizde restoran kalitesinde gastronomi.</h2>
+  </div>
+  <p class="muted" data-i18n="aboutText">Merci Chef.Co; şef seçimi, mutfak tercihi, menü planlaması ve organizasyon detaylarını tek bir rezervasyon deneyiminde birleştirir.</p>
+</section>
+
+<section class="dark-section section" id="chefs">
+  <div class="section-heading">
+    <p class="eyebrow gold" data-i18n="chefsEyebrow">PRIVATE CHEFS</p>
+    <h2 data-i18n="chefsTitle">Şefinizi Seçin</h2>
+    <p data-i18n="chefsText">Tarzınıza ve organizasyonunuza uygun şefi seçin.</p>
+  </div>
+  <div class="cards" id="chefCards"></div>
+</section>
+
+<section class="booking section" id="booking">
+  <div class="section-heading">
+    <p class="eyebrow gold" data-i18n="bookingEyebrow">BOOK YOUR EXPERIENCE</p>
+    <h2 data-i18n="bookingTitle">Organizasyonunuzu Oluşturun</h2>
+    <p data-i18n="bookingText">Şef, mutfak, organizasyon, kişi, tarih ve saat seçiminizi yapın.</p>
+  </div>
+
+  <div class="booking-layout">
+    <form id="bookingForm" class="booking-form">
+      <div class="field">
+        <label data-i18n="chefLabel">Şef</label>
+        <select id="chef" required></select>
+      </div>
+
+      <div class="field">
+        <label data-i18n="cuisineLabel">Mutfak</label>
+        <select id="cuisine" required></select>
+      </div>
+
+      <div class="field">
+        <label data-i18n="eventLabel">Organizasyon</label>
+        <select id="eventType" required></select>
+      </div>
+
+      <div class="two-col">
+        <div class="field">
+          <label data-i18n="guestLabel">Kaç kişi?</label>
+          <input id="guests" type="number" min="1" max="100" value="2" required>
+        </div>
+        <div class="field">
+          <label data-i18n="dateLabel">Tarih</label>
+          <input id="date" type="date" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label data-i18n="timeLabel">Saat</label>
+        <input id="time" type="time" required>
+      </div>
+
+      <div class="field">
+        <label data-i18n="notesLabel">Not / özel istek</label>
+        <textarea id="notes" rows="4" data-placeholder="notesPlaceholder"></textarea>
+      </div>
+
+      <button class="gold-btn full" type="submit" data-i18n="summaryBtn">REZERVASYON ÖZETİNE GEÇ</button>
+    </form>
+
+    <aside class="summary-card">
+      <p class="eyebrow gold" data-i18n="summaryEyebrow">YOUR EXPERIENCE</p>
+      <h3 data-i18n="summaryTitle">Özel Gastronomi Deneyiminiz</h3>
+      <div id="liveSummary" class="live-summary"></div>
+      <div class="price-row"><span data-i18n="estimated">Tahmini toplam</span><strong id="price">—</strong></div>
+      <small data-i18n="priceNote">Nihai fiyat; şef, menü, kişi sayısı ve özel taleplere göre ödeme öncesinde netleştirilir.</small>
+    </aside>
+  </div>
+</section>
+
+<section class="contact dark-section section" id="contact">
+  <p class="eyebrow gold" data-i18n="contactEyebrow">CONTACT</p>
+  <h2 data-i18n="contactTitle">Özel organizasyonunuz için bizimle iletişime geçin.</h2>
+  <a class="whatsapp" target="_blank" href="https://wa.me/905304150729">WhatsApp</a>
+  <a class="mail" href="mailto:contact@mercichef.co">contact@mercichef.co</a>
+</section>
+</main>
+
+<div class="modal hidden" id="paymentModal">
+  <div class="modal-box">
+    <button class="close" id="closeModal">×</button>
+    <p class="eyebrow gold" data-i18n="paymentEyebrow">RESERVATION</p>
+    <h2 data-i18n="paymentTitle">Rezervasyon Özeti</h2>
+    <div id="modalSummary"></div>
+    <div class="modal-total"><span data-i18n="estimated">Tahmini toplam</span><strong id="modalPrice">—</strong></div>
+    <button class="gold-btn full" id="paymentBtn" data-i18n="paymentBtn">ÖDEMEYE GEÇ</button>
+    <p class="payment-note" data-i18n="paymentNote">Bu demo panelinde ödeme yönlendirmesi için altyapı hazırlanmıştır. Gerçek ödeme sağlayıcısı API anahtarı ile ayrıca bağlanmalıdır.</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
