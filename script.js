@@ -7,9 +7,9 @@ ar:{navHome:"الرئيسية",navAbout:"من نحن",navChefs:"الطهاة",na
 
 const data={
 chefs:[
- {id:"yusuf",name:"Chef Yusuf",role:"Fine Dining & Mediterranean",base:250},
- {id:"mert",name:"Chef Mert",role:"Modern Turkish & Aegean",base:220},
- {id:"sofia",name:"Chef Sofia",role:"Italian & Mediterranean",base:240}
+ {id:"mert",name:"Chef Mert",role:"Fine Dining & Mediterranean",base:250},
+ {id:"levent",name:"Chef Levent",role:"Modern Turkish & Aegean",base:220},
+ {id:"yusuf",name:"Chef Yusuf",role:"Italian & Mediterranean",base:240}
 ],
 cuisines:["Türk & Ege","Akdeniz","İtalyan","Fransız","Asya","Fine Dining","Vegan"],
 events:["Doğum Günü","Özel Gün","Romantik Akşam","İş Yemeği","Davet","Özel Organizasyon"]
